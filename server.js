@@ -16,7 +16,7 @@ app.use(bodyParser.json())
 const path=require('path')
 app.use('/api/products/',productsRoute)
 app.use('/api/user/',userRoute)
-app.use('/api/order/',orderRoute)
+app.use('/api/order/',orderRoute) 
 
 
 if(process.env.NODE_ENV === 'production'){
