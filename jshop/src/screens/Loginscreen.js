@@ -70,7 +70,7 @@ useEffect(() => {
             </div>
             </form>
 
-            <a href="/register-">Register Here</a>
+            <a href="/register-">Register Here !</a>
           </div>
         </div>
       </div>
