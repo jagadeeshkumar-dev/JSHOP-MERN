@@ -6,11 +6,11 @@
   "engines": {
     "node":"15.7.0"
   },
-<<<<<<< HEAD
-  "scripts": {
-=======
+
+  
+
  "scripts": {
->>>>>>> da40f3d63348e472863a1195d955d151925375ce
+
     "jshop-install": "npm install --prefix jshop",
     "server": "nodemon server.js",
     "jshop": "npm start --prefix jshop",
