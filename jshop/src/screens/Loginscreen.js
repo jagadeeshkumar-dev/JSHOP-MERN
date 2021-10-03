@@ -69,6 +69,8 @@ useEffect(() => {
               <button type='submit'className="btn btn-primary">LOGIN</button>
             </div>
             </form>
+
+            <a href="/register-">Register Here</a>
           </div>
         </div>
       </div>
