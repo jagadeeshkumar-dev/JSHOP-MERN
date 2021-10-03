@@ -6,13 +6,15 @@
   "engines": {
     "node":"15.7.0"
   },
-"scripts": {
-    "client-install": "npm install --prefix client",
+ "scripts": {
+    "jshop-install": "npm install --prefix jshop",
     "server": "nodemon server.js",
-    "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "jshop": "npm start --prefix jshop",
+    "dev": "concurrently \"npm run server\" \"npm run jshop\"",
     "start": "node server.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    
+"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix jshop && npm run build --prefix jshop"
+    
   },
   "author": "jagadeesh",
   "license": "ISC",
