@@ -1,14 +1,21 @@
 import React, { useState } from "react";
 import { useSelector,useDispatch } from "react-redux";
 import { registerNewUser } from "../actions/userActions";
+import Loader from "../components/Loader";
+import Error from "../components/Error";
+import Success from "../components/Success";
 
 export default function Registerscreen() {
+
+
+  
+  const registerstate =  useSelector(state=>state.registerNewUserReducer)
   const [name, setname] = useState("");
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const [cpassword, setcpassword] = useState("");
 
-
+const {loading,error,success}=registerstate
   const dispatch=useDispatch()
   const  register=(e)=>{
 e.preventDefault()
@@ -36,7 +43,11 @@ const user={
         <div className="col-md-5">
           <div className="div ">
             <h1 className="text-center">Register</h1>
-           <form onSubmit={register}>
+
+            {loading && (<Loader/>)}
+            {error && (<Error error ='Email Address is already registred' ></Error>)} 
+            {success && (<Success success='Your Registration is successfull' />)}
+                      <form onSubmit={register}>
            <input
               type="text"
               placeholder="Name"
@@ -84,6 +95,7 @@ const user={
               <button type='submit'className="btn btn-primary">Register</button>
             </div>
             </form>
+            <a  href="/login" className='m-3'>Click Here To Login</a>
           </div>
         </div>
       </div>
