@@ -1,9 +1,9 @@
 const mongoose =require("mongoose");
 
+var mongoDbUrl="mongodb+srv://jaggu:jaggu123@cluster0.anils.mongodb.net/jshop"
 
 
-
-mongoose.connect(process.env.MONGO_URI,
+mongoose.connect(mongoDbUrl,
     {
         useUnifiedTopology:true,
         useNewUrlParser:true
