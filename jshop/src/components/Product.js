@@ -1,5 +1,5 @@
 import React from "react";
-
+import './css/product.css'
 import {Link} from 'react-router-dom'
 import Rating from 'react-rating'
 const Product = ({product}) => {

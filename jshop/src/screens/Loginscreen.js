@@ -1,9 +1,14 @@
 import React ,{useState,useEffect}from 'react'
-import {useDispatch} from 'react-redux';
+import {useDispatch,useSelector} from 'react-redux';
 import { loginUser } from '../actions/userActions';
+import Loader from "../components/Loader";
+import Error from "../components/Error";
 
 function Loginscreen() {
 
+  const loginreducer = useSelector(state=>state.loginReducer)
+
+  const {loading,error} =loginreducer
 const [email,setemail]=useState('')
 const [password,setpassword]=useState('')
 
@@ -36,9 +41,11 @@ useEffect(() => {
         <div>
              <div className="row justify-content-center">
         <div className="col-md-5">
-          <div className="div ">
+          <div className="div text-center">
             <h1 className="text-center">LOGIN</h1>
             
+            {error && (<Error error='Invalid Credntials'/>)}
+            {loading && (<Loader/>)}
            <form onSubmit={login}>
            
             <input
@@ -67,11 +74,13 @@ useEffect(() => {
             <br />
             <div className="text-center">
               <button type='submit'className="btn btn-primary">LOGIN</button>
+              
             </div>
             </form>
 
-            <a href="/register">Register Here !</a>
+            
           </div>
+          <a href="/register">Register Here !</a>
         </div>
       </div>
         </div>
