@@ -44,7 +44,7 @@ useEffect(() => {
           <div className="div text-center">
             <h1 className="text-center">LOGIN</h1>
             
-            {error && (<Error error='Invalid Credntials'/>)}
+            {error && (<Error error='Invalid Credentials'/>)}
             {loading && (<Loader/>)}
            <form onSubmit={login}>
            
